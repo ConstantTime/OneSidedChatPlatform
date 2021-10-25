@@ -1,0 +1,19 @@
+pusher:
+  key: "5dd5edec08347bf54896"
+  secret-key: "2cfa93195de5a5aefb36"
+  cluster: "us2"
+  app_id: "1287202"
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/chat
+    username: rakshit
+    password: rakshit
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          time_zone: UTC
+    hibernate:
+      ddl-auto: validate
