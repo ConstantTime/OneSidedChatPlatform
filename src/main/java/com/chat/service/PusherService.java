@@ -21,12 +21,12 @@ public class PusherService {
     @Value("${pusher.cluster}")
     private String cluster;
 
-    public void addMessage(Message message) {
+    public void addMessage(String channelId, Message message) {
         Pusher pusher = new Pusher(appId, key, secretKey);
         pusher.setCluster(cluster);
         pusher.setEncrypted(true);
 
-        pusher.trigger("my-channel", "my-event",
+        pusher.trigger(channelId, message.event,
                 Collections.singletonMap("message", message.getText()));
     }
 }
